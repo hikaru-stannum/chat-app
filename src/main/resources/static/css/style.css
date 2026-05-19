@@ -41,6 +41,7 @@ html, body {
   box-sizing: border-box;
   padding:0 20px;
   overflow: scroll;
+  color: white;
 }
 
 
@@ -51,6 +52,9 @@ html, body {
   background-color: #FFFFFF;
   box-sizing: border-box;
   padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .main_main{
@@ -58,6 +62,7 @@ html, body {
   height: calc(100vh - 190px);
   box-sizing: border-box;
   padding: 46px 0 40px;
+  overflow: scroll;
 }
 
 .main_footer{
@@ -65,12 +70,13 @@ html, body {
   height: 90px;
   box-sizing: border-box;
   padding: 20px 40px;
+  display: flex;
+  align-items: center;
 }
 
 /* サイドバー実装 */
 a{
   display: block;
-  color: white;
   text-decoration: none;
 }
 
@@ -91,9 +97,95 @@ a{
   margin: 0;
 }
 
+.chatroom a{
+  color:white;
+}
+
 .chatroom{
-  /* border: 1px solid white; */
   list-style: none;
   padding-top: 20px;
   padding-bottom: 40px;
+}
+
+/* メインヘッダー*/
+.current_chat{
+  font-size: 24px;
+  color: #333;
+  margin-top: 36px;
+
+}
+
+.end_chat{
+  display: block;
+  color: darkred;
+  border: 1px solid darkred;
+  padding: 20px;
+}
+
+/* メイン中身 */
+.main_post{
+  padding-bottom: 40px;
+  padding-top: 10px;
+  list-style: none;
+}
+
+.main_flex{
+  display: flex;
+  align-items: center;
+}
+
+.name_post{
+  font-size: 16px;
+  color: #434a54;
+}
+
+.time_post{
+  font-size: 12px;
+  color: #999;
+  margin-left: 10px;
+}
+
+.post_content{
+  font-size: 14px;
+  color: #434a54;
+  margin-top: 10px;  
+}
+
+/* メインフッター */
+.form_input {
+  background-color: white;
+  display: flex;
+  width: 100%;
+}
+
+.enter_content {
+  border: none;
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.bt_post{
+  background-color: #38AEF0;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+
+
+.form_image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
 }
