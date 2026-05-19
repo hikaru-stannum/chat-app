@@ -1,0 +1,191 @@
+/* 追加：ブラウザ標準の余白をリセットし、画面からはみ出さないようにする */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* 画面全体のスクロールを禁止 */
+}
+
+.wrapper{
+  display: flex;
+}
+
+/* 二分割 */
+.side_bar{
+  background-color: #253141;
+  width: 300px;
+  height: 100vh; 
+}
+
+.main_chat{
+  width: calc(100vw - 300px);
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+/* サイド */
+.side_header{
+  height:100px;
+  background-color: #253141;
+  box-sizing: border-box;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.side_title{
+  height: calc(100vh - 100px);
+  background-color: #2F3E51;
+  box-sizing: border-box;
+  padding:0 20px;
+  overflow: scroll;
+  color: white;
+}
+
+
+
+/* メイン */
+.main_header{
+  height: 100px;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main_main{
+  background-color: #FAFAFA;
+  height: calc(100vh - 190px);
+  box-sizing: border-box;
+  padding: 46px 0 40px;
+  overflow: scroll;
+}
+
+.main_footer{
+  background-color: #DDDDDD;
+  height: 90px;
+  box-sizing: border-box;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* サイドバー実装 */
+a{
+  display: block;
+  text-decoration: none;
+}
+
+.username{
+  font-size: 16px;
+  color: #FAFAFA;
+}
+
+.create_chat{
+  font-size: 10px;
+  color: deepskyblue;
+  border: 1px solid lightblue;
+  padding: 14px;
+}
+
+.side_titles{
+  padding-left: 0;
+  margin: 0;
+}
+
+.chatroom a{
+  color:white;
+}
+
+.chatroom{
+  list-style: none;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* メインヘッダー*/
+.current_chat{
+  font-size: 24px;
+  color: #333;
+  margin-top: 36px;
+
+}
+
+.end_chat{
+  display: block;
+  color: darkred;
+  border: 1px solid darkred;
+  padding: 20px;
+}
+
+/* メイン中身 */
+.main_post{
+  padding-bottom: 40px;
+  padding-top: 10px;
+  list-style: none;
+}
+
+.main_flex{
+  display: flex;
+  align-items: center;
+}
+
+.name_post{
+  font-size: 16px;
+  color: #434a54;
+}
+
+.time_post{
+  font-size: 12px;
+  color: #999;
+  margin-left: 10px;
+}
+
+.post_content{
+  font-size: 14px;
+  color: #434a54;
+  margin-top: 10px;  
+}
+
+/* メインフッター */
+.form_input {
+  background-color: white;
+  display: flex;
+  width: 100%;
+}
+
+.enter_content {
+  border: none;
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.bt_post{
+  background-color: #38AEF0;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+
+
+.form_image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
