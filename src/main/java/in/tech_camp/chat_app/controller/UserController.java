@@ -124,7 +124,5 @@ private final UserRepository userRepository;
       return "users/edit";
     }
     return "redirect:/";
-  }
-
-  
+  }  
 }
