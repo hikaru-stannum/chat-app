@@ -53,6 +53,7 @@ public class RoomController {
       model.addAttribute("errorMessages", errorMessages);
       return "rooms/new";
     }
+
     
     RoomEntity roomEntity = new RoomEntity();
     roomEntity.setName(roomForm.getName());

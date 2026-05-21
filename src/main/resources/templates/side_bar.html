@@ -6,23 +6,10 @@
       <a th:href="@{/rooms/new}" class="create_chat">チャットを作成する</a>
   </div>
   <div class="side_title">
-    <ul class="side_titles">
-      <li class="chatroom"><a href="#">chatroom 1</a></li>
-      <li class="chatroom"><a href="#">chatroom 2</a></li>
-      <li class="chatroom"><a href="#">chatroom 3</a></li>
-      <li class="chatroom"><a href="#">chatroom 4</a></li>
-      <li class="chatroom"><a href="#">chatroom 5</a></li>
-      <li class="chatroom"><a href="#">chatroom 6</a></li>
-      <li class="chatroom"><a href="#">chatroom 7</a></li>
-      <li class="chatroom"><a href="#">chatroom 8</a></li>
-      <li class="chatroom"><a href="#">chatroom 9</a></li>
-      <li class="chatroom"><a href="#">chatroom 10</a></li>
-      <li class="chatroom"><a href="#">chatroom 11</a></li>
-      <li class="chatroom"><a href="#">chatroom 12</a></li>
-      <li class="chatroom"><a href="#">chatroom 13</a></li>
-      <li class="chatroom"><a href="#">chatroom 14</a></li>
-      <li class="chatroom"><a href="#">chatroom 15</a></li>
-    </ul>
+    <div th:each="room : ${rooms}"  class="room">
+      <div class="chatroom">
+      <a href="#" th:text="${room.name}">techroom</a>
+      </div>
+    </div>
   </div>
-</div>
 </html>
