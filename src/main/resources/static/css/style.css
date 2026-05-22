@@ -9,6 +9,7 @@ html, body {
 
 .wrapper{
   display: flex;
+  width: 100%; /* ★追加 */
 }
 
 /* 二分割 */
@@ -65,20 +66,30 @@ html, body {
   overflow: scroll;
 }
 
-.main_footer{
+/* 変更後：グレーの背景や高さは外側の div に残す */
+.main_footer {
   background-color: #DDDDDD;
   height: 90px;
   box-sizing: border-box;
   padding: 20px 40px;
-  display: flex;
-  align-items: center;
 }
 
-/* サイドバー実装 */
-a{
+/* 追加：中の form を横並びの Flexbox にし、幅をいっぱいに広げる */
+.main_footer form {
+  display: flex;
+  align-items: center;
+  width: 100%; /* 横幅いっぱいに広げる */
+}
+
+/* 全体のaタグの基本設定 */
+a {
   display: block;
-  color: white;
   text-decoration: none;
+}
+
+/* ★サイドバーの中にあるaタグだけを白く指定する */
+.side_bar a {
+  color: white;
 }
 
 .username{
@@ -112,11 +123,13 @@ a{
 
 }
 
-.end_chat{
-  display: block;
-  color: darkred;
+.end_chat input[type="submit"] {
+  text-decoration: none;
   border: 1px solid darkred;
+  color: darkred;
+  background-color: #fff;
   padding: 20px;
+  cursor: pointer;
 }
 
 /* メイン中身 */
@@ -149,6 +162,7 @@ a{
 }
 
 /* メインフッター */
+
 .form_input {
   background-color: white;
   display: flex;
