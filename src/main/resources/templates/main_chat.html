@@ -1,7 +1,11 @@
 <div th:fragment="main_chat" class="main_chat">
   <div class="main_header">
     <p class="current_chat" th:text="${room.name}">ルーム名</p>
-    <a href="#" class="end_chat">チャットを終了する</a>
+    <div class="end_chat">
+        <form th:action="@{/rooms/{roomId}/delete(roomId=${room.id})}" method="post">
+          <input type="submit" value="チャットを終了する"/>
+        </form>
+    </div>
   </div>
   <div class="main_main">
       <div th:each="message: ${messages}"  class="main_post">

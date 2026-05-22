@@ -22,7 +22,9 @@ import in.tech_camp.chat_app.repository.validation.ValidationOrder;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
 
 
 
@@ -96,5 +98,11 @@ public class RoomController {
       }
     }
     return "redirect:/";
+  }
+
+  @PostMapping("/rooms/{roomId}/delete")
+  public String deleteRoom(@PathVariable Integer roomId) {
+      roomRepository.deleteById(roomId);
+      return "redirect:/";
   }
 }

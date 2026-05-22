@@ -123,11 +123,13 @@ a {
 
 }
 
-.end_chat{
-  display: block;
-  color: darkred;
+.end_chat input[type="submit"] {
+  text-decoration: none;
   border: 1px solid darkred;
+  color: darkred;
+  background-color: #fff;
   padding: 20px;
+  cursor: pointer;
 }
 
 /* メイン中身 */
