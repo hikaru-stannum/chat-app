@@ -31,7 +31,6 @@ import in.tech_camp.chat_app.repository.MessageRepository;
 import in.tech_camp.chat_app.repository.RoomRepository;
 import in.tech_camp.chat_app.repository.RoomUserRepository;
 import in.tech_camp.chat_app.repository.UserRepository;
-import in.tech_camp.chat_app.repository.validation.ValidationOrder;
 import lombok.AllArgsConstructor;
 
 @Controller
@@ -69,7 +68,9 @@ public class MessageController {
   }
 
   @PostMapping("/rooms/{roomId}/messages")
-  public String saveMessage(@PathVariable("roomId") Integer roomId, @ModelAttribute("messageForm") @Validated(ValidationOrder.class) MessageForm messageForm, BindingResult bindingResult, @AuthenticationPrincipal CustomUserDetail currentUser) {
+  
+  public String saveMessage(@PathVariable("roomId") Integer roomId, @ModelAttribute("messageForm") MessageForm messageForm, BindingResult bindingResult, @AuthenticationPrincipal CustomUserDetail currentUser) {
+    messageForm.validateMessage(bindingResult);
     if (bindingResult.hasErrors()) {
       return "redirect:/rooms/" + roomId + "/messages";
     }
