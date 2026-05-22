@@ -7,7 +7,7 @@
       <div th:each="message: ${messages}"  class="main_post">
         <div class="main_flex">
           <div class="message-user" th:text="${message.user.name}">ユーザー名</div>
-          <div class="time_post" th:text="${message.createdAt}">日付</div>
+          <div class="time_post" th:text="${#dates.format(message.createdAt, 'yyyy/MM/dd HH:mm:ss')}">日付</div>
         </div>
         <div class="post_content" th:text="${message.content}">メッセージ内容</div>
       </div>
