@@ -17,12 +17,12 @@
       </div>
   </div>
   <div class="main_footer">
-    <form th:action="@{/rooms/{roomId}/messages(roomId=${roomId})}" method="post" th:object="${messageForm}">
+ <form th:action="@{/rooms/{roomId}/messages(roomId=${room.id})}" method="post" th:object="${messageForm}" class="form" enctype="multipart/form-data">
       <div class="form_input">
         <input th:field="*{content}" class="enter_content" placeholder= "type a message"/>
         <label class="form_image">
           <span class="image-file">画像</span>
-          <input type="file" class="hidden"/>
+          <input type="file" th:field="*{image}" class="hidden">
         </label>
       </div>
       <input class="bt_post" type="submit" value="送信"/>
