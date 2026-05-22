@@ -1,24 +1,16 @@
 <div th:fragment="main_chat" class="main_chat">
   <div class="main_header">
-    <p class="current_chat">hogefuga</p>
+    <p class="current_chat" th:text="${room.name}">ルーム名</p>
     <a href="#" class="end_chat">チャットを終了する</a>
   </div>
   <div class="main_main">
-    <ul class="main_post">
-      <li>
+      <div th:each="message: ${messages}"  class="main_post">
         <div class="main_flex">
-          <p class="name_post">Tom</p>
-          <p class="time_post">2020/3/31(Wed) 12:43:30</p>
+          <div class="message-user" th:text="${message.user.name}">ユーザー名</div>
+          <div class="time_post" th:text="${message.createdAt}">日付</div>
         </div>
-        <p class="post_content">おはよう</p> </li>
-      <li>
-        <div class="main_flex">
-          <p class="name_post">Sim</p>
-          <p class="time_post">2020/3/31(Wed) 12:48:21</p>
-        </div>
-        <p class="post_content">Hello</p>
-      </li>
-    </ul>
+        <div class="post_content" th:text="${message.content}">メッセージ内容</div>
+      </div>
   </div>
   <div class="main_footer">
     <form th:action="@{/rooms/{roomId}/messages(roomId=${roomId})}" method="post" th:object="${messageForm}">
