@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="ja">
 <div th:fragment="main_chat" class="main_chat">
   <div class="main_header">
     <p class="current_chat">hogefuga</p>
@@ -12,26 +10,26 @@
           <p class="name_post">Tom</p>
           <p class="time_post">2020/3/31(Wed) 12:43:30</p>
         </div>
-        <p class="post_contemt">おはよう</p>
-      </li>
+        <p class="post_content">おはよう</p> </li>
       <li>
         <div class="main_flex">
           <p class="name_post">Sim</p>
           <p class="time_post">2020/3/31(Wed) 12:48:21</p>
         </div>
-        <p class="post_contemt">Hello</p>
+        <p class="post_content">Hello</p>
       </li>
     </ul>
   </div>
   <div class="main_footer">
+    <form th:action="@{/rooms/{roomId}/messages(roomId=${roomId})}" method="post" th:object="${messageForm}">
       <div class="form_input">
-        <input class="enter_content" placeholder="type a message">
+        <input th:field="*{content}" class="enter_content" placeholder= "type a message"/>
         <label class="form_image">
           <span class="image-file">画像</span>
-          <input type="file" class="hidden">
+          <input type="file" class="hidden"/>
         </label>
       </div>
-      <input class="bt_post" type="submit" value="送信">
+      <input class="bt_post" type="submit" value="送信"/>
+    </form>
   </div>
 </div>
-</html>
