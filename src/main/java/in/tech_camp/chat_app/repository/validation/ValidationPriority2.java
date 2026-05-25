@@ -1,5 +1,5 @@
 package in.tech_camp.chat_app.repository.validation;
 
-public class ValidationPriority2 {
+public interface ValidationPriority2 {
   
 }
